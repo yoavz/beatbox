@@ -1,6 +1,11 @@
 body {
+  background-image: url("/img/escheresque_ste.png");
   margin: 0px 20px;
   text-align: center;
+
+  font-family: serif;
+  font-size: 18px;
+  color: white;
 }
 
 .beatbox-container {
@@ -51,17 +56,17 @@ body {
   }
 
   .beat-container .beat:hover {
-    background-color: lightgray;
+    background-color: gray;
   }
 
   .beat-container .beat.active {
-    background-color: darkgray;
+    background-color: red;
   }
 
   .beat-container .beat.active:hover {
-    background-color: darkgray;
+    background-color: orange;
   }
 
   .beat-container .beat.current {
-    background-color: black;
+    border: 2px solid red;
   }

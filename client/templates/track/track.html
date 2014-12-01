@@ -1,5 +1,10 @@
 <template name="track">
   <div class="track-container">
+    <select class="select-instrument">
+      {{#each instruments}}
+        <option>{{this}}</option>
+      {{/each}}
+    </select>
     <div class="beat-container">
       <div class="reset-button"></div>
     </div>
