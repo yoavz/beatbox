@@ -1,16 +1,21 @@
 <template name="track">
   <div class="track-container">
-    <select class="select-instrument">
-      {{#each instruments}}
-        <option>{{this}}</option>
-      {{/each}}
-    </select>
+    <div class="select-instrument">
+      <select class="select-instrument">
+        {{#each instruments}}
+          <option>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
     <div class="beat-container">
-      <div class="reset-button"></div>
+      <div class="reset-button">R</div>
     </div>
     {{#each beats}}
       {{> beat}}
     {{/each}}
+    <div class="beat-container">
+      <div class="remove-track">X</div>
+    </div>
   </div>
 </template>
 

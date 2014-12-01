@@ -1,8 +1,13 @@
 <template name="beatbox">
   <div class="beatbox-container">
-    <button id="resetBeats">Reset All</button>
+    <button class="stop-start">Play/Stop</button>
+    <button class="reset-beats">Reset All</button>
     {{#each tracks}}
       {{> track}}
     {{/each}}
+
+    <div class="add-track">
+      Add Track (+)
+    </div>
   </div>
 </template>

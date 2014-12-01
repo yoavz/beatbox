@@ -13,10 +13,23 @@ Template.beatbox.helpers({
 
 Template.beatbox.events({
 
-  "click #createTrack": function () {
+  "click .add-track": function () {
+    Meteor.call("newTrack");
   },
 
-  "click #resetBeats": function () {
+  "click .remove-track": function () {
+    Meteor.call("removeTrack", this._id);
+  },
+
+  "click .reset-beats": function () {
     Meteor.call("resetAll");
+  },
+
+  "click .stop-start": function () {
+    if (isPlaying()) {
+      stop();
+    } else {
+      play();
+    }
   }
 });

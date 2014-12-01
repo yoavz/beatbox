@@ -13,14 +13,20 @@ body {
 }
 
 .track-container {
+  display: table;
   margin: 10px;
 }
 
-  .track-container .volume-control {
+  .track-container .select-instrument {
+    display: table-cell;
+    margin: 5px;
+    width: 60px;
+    height: 40px;
   }
 
   .track-container .beat-container .reset-button {
     margin: 5px;
+    padding: 5px;
     width: 20px;
     height: 30px;
     border: 1px solid black;
@@ -40,8 +46,7 @@ body {
 
 .beat-container {
   display: inline-block;
-  width: 30px;
-  height: 40px;
+  vertical-align: middle;
 }
 
   .beat-container .beat {
@@ -70,3 +75,38 @@ body {
   .beat-container .beat.current {
     border: 2px solid red;
   }
+
+.add-track {
+  margin: 0px 30px;
+  height: 50px;
+  width: 100px;
+  color: black;
+}
+
+.add-track {
+  background-color: white;
+}
+
+.add-track:hover {
+  background-color:gray;
+}
+
+.add-track:active {
+  background-color:orange;
+}
+
+.remove-track {
+  margin: 5px;
+  width: 20px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.remove-track {
+  background-color: black;
+  color: white;
+}
+
+.remove-track:hover {
+  background-color: gray;
+}
