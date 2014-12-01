@@ -1,0 +1,46 @@
+body {
+  margin: 0px 20px;
+  text-align: center;
+}
+
+.beatbox-container {
+  margin: 20px 0px; 
+}
+
+.track-container {
+  margin: 10px;
+}
+
+.beat-container {
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  color: red;
+}
+
+  .beat-container .beat {
+    margin: 5px;
+    width: 20px;
+    height: 30px;
+    border: 1px solid black;
+  }
+
+  .beat-container .beat {
+    background-color: white;
+  }
+
+  .beat-container .beat:hover {
+    background-color: lightgray;
+  }
+
+  .beat-container .beat.active {
+    background-color: darkgray;
+  }
+
+  .beat-container .beat.active:hover {
+    background-color: darkgray;
+  }
+
+  .beat-container .beat.current {
+    background-color: black;
+  }

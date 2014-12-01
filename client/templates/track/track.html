@@ -1,0 +1,13 @@
+<template name="track">
+  <div class="track-container">
+    {{#each beats}}
+      {{> beat}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="beat">
+  <div class="beat-container">
+    <div class="beat {{beatClass}}" pos="{{pos}}"></div>
+  </div>
+</template>
