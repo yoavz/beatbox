@@ -29,9 +29,19 @@ Template.track.rendered = function () {
 }
 
 Template.track.helpers({
+
   beats: function () {
     return Beats.find({trackId: this._id});
   }, 
+
+});
+
+Template.track.events({
+
+  "click .reset-button": function () {
+    Meteor.call("resetTrack", this._id);
+  }
+
 });
 
 Template.beat.helpers({

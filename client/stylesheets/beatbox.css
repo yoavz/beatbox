@@ -11,11 +11,32 @@ body {
   margin: 10px;
 }
 
+  .track-container .volume-control {
+  }
+
+  .track-container .beat-container .reset-button {
+    margin: 5px;
+    width: 20px;
+    height: 30px;
+    border: 1px solid black;
+  }
+
+  .track-container .beat-container .reset-button {
+    background-color: blue;
+  }
+
+  .track-container .beat-container .reset-button:hover {
+    background-color: red;
+  }
+
+  .track-container .beat-container .reset-button:active {
+    background-color: orange;
+  }
+
 .beat-container {
   display: inline-block;
   width: 30px;
   height: 40px;
-  color: red;
 }
 
   .beat-container .beat {
