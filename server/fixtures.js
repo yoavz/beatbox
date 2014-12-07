@@ -1,38 +1,25 @@
 if (Tracks.find().count() === 0) {
   kick = Tracks.insert({
-    instrument: "kick"
+    instrument: "kick",
+    volume: 100,
+    0: true,
+    4: true,
+    8: true,
+    12: true,
   });
-
-  for (var i=0; i<16; i++) {
-    Beats.insert({
-      trackId: kick,
-      pos: i,
-      active: i % 4 === 0 ? true : false   
-    });
-  }
 
   snare = Tracks.insert({
-    instrument: "snare"
+    instrument: "snare",
+    volume: 100,
+    3: true,
+    7: true,
+    12: true,
+    15: true,
   });
 
-  for (var i=0; i<16; i++) {
-    Beats.insert({
-      trackId: snare,
-      pos: i,
-      active: i % 8 === 0 ? true : false   
-    });
-  }
-
-  hihat = Tracks.insert({
-    instrument: "hihat"
-  });
-
-  for (var i=0; i<16; i++) {
-    Beats.insert({
-      trackId: hihat,
-      pos: i,
-      active: i ? true : false   
-    });
-  }
+  //
+  // hihat = Tracks.insert({
+  //   instrument: "hihat"
+  // });
 
 }

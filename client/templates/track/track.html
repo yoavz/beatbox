@@ -3,7 +3,7 @@
     <div class="select-instrument">
       <select class="select-instrument">
         {{#each instruments}}
-          <option>{{this}}</option>
+          <option {{isSelected ../instrument}}>{{this}}</option>
         {{/each}}
       </select>
     </div>
@@ -13,6 +13,9 @@
     {{#each beats}}
       {{> beat}}
     {{/each}}
+    <div class="volume-slider-container">
+      <div class="volume-slider"></div>
+    </div>
     <div class="beat-container">
       <div class="remove-track">X</div>
     </div>

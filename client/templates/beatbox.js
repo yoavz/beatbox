@@ -17,10 +17,6 @@ Template.beatbox.events({
     Meteor.call("newTrack");
   },
 
-  "click .remove-track": function () {
-    Meteor.call("removeTrack", this._id);
-  },
-
   "click .reset-beats": function () {
     Meteor.call("resetAll");
   },
