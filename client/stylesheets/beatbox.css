@@ -77,7 +77,7 @@ body {
 
 .track-options {
   display: table-cell;
-  width: 100px;
+  width: 135px;
   padding: 5px;
 }
 
@@ -108,7 +108,7 @@ body {
   }
 
   .track-options .volume-slider {
-    width: 100px;
+    width: 125px;
   }
 
   .track-options .reset-remove {
@@ -119,7 +119,7 @@ body {
 
     .track-options .reset-remove button {
       display: inline-block;
-      width: 30px; 
+      width: 39px; 
       text-align: center;
       cursor: pointer;
 
@@ -195,7 +195,7 @@ body {
 
   .beat-container .beat {
     margin: 5px;
-    width: 26px;
+    width: 25px;
     height: 30px;
 
     border-radius: 5px 5px 5px 5px;
