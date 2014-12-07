@@ -30,7 +30,7 @@ Template.trackOptions.events({
     newInstrument = instruments[index];
     
     Tracks.update(this._id, {$set: {instrument: newInstrument}}, false);
-    playSound(newInstrument, {volume: this.volume});
+    FastPlayer.playInstrument(newInstrument, this.volume);
   }
 
 });

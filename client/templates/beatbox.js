@@ -1,8 +1,6 @@
 Template.beatbox.created = function () {
-
   // init the music
-  initPlayer();
-
+  FastPlayer.loadBeatboxSounds();
 }
 
 Template.beatbox.helpers({

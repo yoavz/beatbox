@@ -7,8 +7,13 @@ Template.track.created = function () {
     nextBeat = (currBeat + 1) % 16
 
     // queue up the sound for the next beat
-    if (_.has(self.data, nextBeat) && self.data[nextBeat]) {
-      queueSound(self.data.instrument, {volume: self.data.volume});
+    // if (_.has(self.data, nextBeat) && self.data[nextBeat]) {
+    //   queueSound(self.data.instrument, {volume: self.data.volume});
+    // }
+    
+    console.log(self.data);
+    if (_.has(self.data, currBeat) && self.data[currBeat]) {
+      FastPlayer.playSound(self.data.instrument, self.data.volume);
     }
 
   });
