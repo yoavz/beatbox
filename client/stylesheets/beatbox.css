@@ -1,22 +1,54 @@
 body {
-  background-image: url("/img/escheresque_ste.png");
+  /* background-image: url("/img/escheresque_ste.png"); */
+  background: #13505B;
   margin: 0 auto;
 
   font-family: serif;
   font-size: 18px;
-  color: white;
+  color: #040404;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .beatbox-container {
+  
 }
+
+.global-controls {
+  background: #D7D9CE;
+  padding: 10px;
+
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 2px solid #0C7489;
+}
+
+  .global-controls .stop-start {
+    display: inline;
+    margin: 5px;
+  }
+
+  .global-controls .reset-beats {
+    display: inline;
+    margin: 5px;
+  }
+
+/* TRACKS */
 
 .track-container {
   display: table;
+
+  margin: 10px 0px;
+  background: #D7D9CE;
+
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border: 2px solid #0C7489;
 }
 
   .track-container .select-instrument {
@@ -31,7 +63,7 @@ body {
     padding: 5px;
     width: 20px;
     height: 30px;
-    border: 1px solid black;
+    border: 1px solid #0C7489;
   }
 
   .track-container .beat-container .reset-button {
@@ -46,43 +78,11 @@ body {
     background-color: orange;
   }
 
-.beat-container {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-  .beat-container .beat {
-    margin: 5px;
-    width: 20px;
-    height: 30px;
-    border: 1px solid black;
-  }
-
-  .beat-container .beat {
-    background-color: white;
-  }
-
-  .beat-container .beat:hover {
-    background-color: gray;
-  }
-
-  .beat-container .beat.active {
-    background-color: red;
-  }
-
-  .beat-container .beat.active:hover {
-    background-color: orange;
-  }
-
-  .beat-container .beat.current {
-    border: 2px solid red;
-  }
-
 .add-track {
   margin: 0px 30px;
   height: 50px;
   width: 100px;
-  color: black;
+  color: #0C7489;
 }
 
 .add-track {
@@ -101,11 +101,11 @@ body {
   margin: 5px;
   width: 20px;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid #0C7489;
 }
 
 .remove-track {
-  background-color: black;
+  background-color: #0C7489;
   color: white;
 }
 
@@ -122,6 +122,65 @@ body {
 .volume-slider {
   width: 100px;
 }
+
+/* BEATS */
+
+.beat-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+  .beat-container .beat {
+    margin: 5px;
+    width: 20px;
+    height: 30px;
+
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 2px solid #0C7489;
+  }
+
+  .beat-container .beat {
+    background: #FFE2C7
+    background-image: -webkit-linear-gradient(top, #FFE2C7, #D4A376);
+    background-image: -moz-linear-gradient(top, #FFE2C7, #D4A376);
+    background-image: -ms-linear-gradient(top, #FFE2C7, #D4A376);
+    background-image: -o-linear-gradient(top, #FFE2C7, #D4A376);
+    background-image: linear-gradient(to bottom, #FFE2C7, #D4A376);
+  }
+
+  .beat-container .beat:hover {
+    background: #FFCBC7
+    background-image: -webkit-linear-gradient(top, #FFCBC7, #D47D76);
+    background-image: -moz-linear-gradient(top, #FFCBC7, #D47D76);
+    background-image: -ms-linear-gradient(top, #FFCBC7, #D47D76);
+    background-image: -o-linear-gradient(top, #FFCBC7, #D47D76);
+    background-image: linear-gradient(to bottom, #FFCBC7, #D47D76);
+  }
+
+  .beat-container .beat.active {
+    background: #865529;
+    background-image: -webkit-linear-gradient(top, #865529, #552900);
+    background-image: -moz-linear-gradient(top, #865529, #552900);
+    background-image: -ms-linear-gradient(top, #865529, #552900);
+    background-image: -o-linear-gradient(top, #865529, #552900);
+    background-image: linear-gradient(to bottom, #865529, #552900);
+  }
+
+  .beat-container .beat.active:hover {
+    background: #863029;
+    background-image: -webkit-linear-gradient(top, #863029, #550600);
+    background-image: -moz-linear-gradient(top, #863029, #550600);
+    background-image: -ms-linear-gradient(top, #863029, #550600);
+    background-image: -o-linear-gradient(top, #863029, #550600);
+    background-image: linear-gradient(to bottom, #863029, #550600);
+  }
+
+  .beat-container .beat.current {
+    box-shadow: 0px 0px 18px 5px rgba(255, 115, 60, .55);
+  }
+
 
 /* .noUi-handle { */
 /*   width: 10px !important; */

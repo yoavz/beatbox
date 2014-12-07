@@ -17,15 +17,4 @@ Template.beatbox.events({
     Meteor.call("newTrack");
   },
 
-  "click .reset-beats": function () {
-    Meteor.call("resetAll");
-  },
-
-  "click .stop-start": function () {
-    if (isPlaying()) {
-      stop();
-    } else {
-      play();
-    }
-  }
 });
