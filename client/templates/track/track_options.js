@@ -28,9 +28,16 @@ Template.trackOptions.events({
       index += 1
 
     newInstrument = instruments[index];
-    
     Tracks.update(this._id, {$set: {instrument: newInstrument}}, false);
     FastPlayer.playInstrument(newInstrument, this.volume);
-  }
+  },
+
+  "click .reset-button": function () {
+    Meteor.call("resetTrack", this._id);
+  },
+
+  "click .remove-button": function () {
+    Meteor.call("removeTrack", this._id);
+  },
 
 });

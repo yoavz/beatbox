@@ -14,14 +14,20 @@ Template.track.created = function () {
 };
 
 Template.track.rendered = function () {
+  // this is bound to the templateInstance inside the rendered function
+  // context lives in this.data
+  var trackInstance = this;
+
   // noUISlider
   slider = this.$(".volume-slider").noUiSlider({
-    start: [100],
+    start: [parseInt(trackInstance.data.volume)],
     range: {
       'min': 0,
       'max': 100
     }
   });
+  //
+  // console.log(track.volume);
 
 };
 
@@ -52,14 +58,6 @@ Template.track.helpers({
 });
 
 Template.track.events({
-
-  "click .reset-button": function () {
-    Meteor.call("resetTrack", this._id);
-  },
-
-  "click .remove-track": function () {
-    Meteor.call("removeTrack", this._id);
-  },
 
   "click .beat": function (e) {
     target = $(e.target);

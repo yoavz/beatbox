@@ -1,11 +1,11 @@
 <template name="beatbox">
-  <h1>Collaborative Beatbox</h1>
+  <h1>Beatbox</h1>
   {{> controls}}
   {{#each tracks}}
     {{> track}}
   {{/each}}
 
   <div class="add-track">
-    Add Track (+)
+    <i class="fa fa-plus-circle fa-3x add-track-icon"></i>
   </div>
 </template>
