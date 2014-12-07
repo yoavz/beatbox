@@ -3,7 +3,7 @@ Beatbox
 
 Collaborative music synthesis built on top of the [Meteor](https://www.meteor.com/) web framework.
 
-###### This is a work in progress!
+## This is a work in progress!
 
 #### Run
 
