@@ -1,8 +1,8 @@
 Template.beatbox.created = function () {
-  soundManager.setup({
-    debugMode: false,
-    consoleOnly: false,
-  });
+
+  // init the music
+  initPlayer();
+
 }
 
 Template.beatbox.helpers({

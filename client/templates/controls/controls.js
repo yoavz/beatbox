@@ -1,6 +1,6 @@
 Template.controls.helpers({
   "playStatus": function () {
-    return !isPlaying() ? "&#9654;" : "&#9612;&#9612;"
+    return !isPlaying() ? "&#9654;" : "&#9616;&#9616;"
   }
 });
 

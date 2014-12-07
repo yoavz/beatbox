@@ -1,3 +1,4 @@
+
 body {
   /* background-image: url("/img/escheresque_ste.png"); */
   background: #13505B;
@@ -13,11 +14,8 @@ body {
   margin: 0 auto;
 }
 
-.beatbox-container {
-  
-}
-
 .global-controls {
+  display: relative;
   background: #D7D9CE;
   padding: 10px;
 
@@ -34,7 +32,14 @@ body {
 
   .global-controls .reset-beats {
     display: inline;
-    margin: 5px;
+    background:#0C7489;
+    float: right;
+
+    border: 2px solid #0C7489;
+  }
+
+  .global-controls .reset-beats:hover {
+    background: #119DA4;
   }
 
 /* TRACKS */
@@ -42,6 +47,7 @@ body {
 .track-container {
   display: table;
 
+  width: 100%;
   margin: 10px 0px;
   background: #D7D9CE;
 
@@ -51,31 +57,54 @@ body {
   border: 2px solid #0C7489;
 }
 
-  .track-container .select-instrument {
-    display: table-cell;
-    margin: 5px;
-    width: 60px;
-    height: 40px;
+/* TRACK OPTIONS */
+
+.track-options {
+  display: table-cell;
+  width: 100px;
+  padding: 5px;
+}
+
+  .track-options .instrument {
+    display: block;
+
+    text-align: center;
+
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 2px solid #0C7489;
   }
 
-  .track-container .beat-container .reset-button {
-    margin: 5px;
-    padding: 5px;
-    width: 20px;
-    height: 30px;
+  .track-options .instrument .fa-arrow-circle-left {
+    margin: 2px;
+    float: left; 
+  }
+
+  .track-options .instrument .fa-arrow-circle-right {
+    margin: 2px;
+    float: right; 
+  }
+
+  .track-options .volume-slider-container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .track-options .volume-slider {
+    width: 100px;
+  }
+
+  .track-options .reset-button {
+    display: inline-block;
+    width: 45px;
     border: 1px solid #0C7489;
   }
 
-  .track-container .beat-container .reset-button {
-    background-color: blue;
-  }
-
-  .track-container .beat-container .reset-button:hover {
-    background-color: red;
-  }
-
-  .track-container .beat-container .reset-button:active {
-    background-color: orange;
+  .track-options .remove-track {
+    display: inline-block;
+    width: 45px;
+    border: 1px solid #0C7489;
   }
 
 .add-track {
@@ -97,31 +126,6 @@ body {
   background-color:orange;
 }
 
-.remove-track {
-  margin: 5px;
-  width: 20px;
-  height: 30px;
-  border: 1px solid #0C7489;
-}
-
-.remove-track {
-  background-color: #0C7489;
-  color: white;
-}
-
-.remove-track:hover {
-  background-color: gray;
-}
-
-.volume-slider-container {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 20px;
-}
-
-.volume-slider {
-  width: 100px;
-}
 
 /* BEATS */
 

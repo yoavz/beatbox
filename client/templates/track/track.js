@@ -1,34 +1,16 @@
-MAPPINGS_808 = {
-  "snare": "/samples/808/snare.ogg",
-  "kick": "/samples/808/kick.ogg",
-  "hihat": "/samples/808/chh.ogg",
-  "clave": "/samples/808/clave.ogg",
-  "cowbell": "/samples/808/cow.ogg",
-  "rim": "/samples/808/rim.ogg",
-  "cymbal": "/samples/808/cymbal.ogg",
-  "clap": "/samples/808/clap.ogg",
-}
-
 Template.track.created = function () {
 
   this.autorun(function () {
     var self = this.templateInstance();
 
-    // if the sound is not defined OR the instrument has changed, update it
-    if (!this.sound || this.sound.instrument !== self.data.instrument) {
-      this.sound = soundManager.createSound({
-          url: MAPPINGS_808[self.data.instrument]
-      });
+    currBeat = Session.get("absoluteTime") % 16;
+    nextBeat = (currBeat + 1) % 16
 
-      this.sound.instrument = self.data.instrument;
+    // queue up the sound for the next beat
+    if (_.has(self.data, nextBeat) && self.data[nextBeat]) {
+      queueSound(self.data.instrument, {volume: self.data.volume});
     }
 
-    var beat = Session.get("absoluteTime") % 16;
-
-    if (_.has(self.data, beat) && self.data[beat])
-      this.sound.play({
-        volume: self.data.volume
-      });
   });
 
 };
@@ -69,14 +51,6 @@ Template.track.helpers({
     return res;
   }, 
 
-  instruments: function () {
-    return _.keys(MAPPINGS_808);
-  },
-
-  isSelected: function (instr) {
-    return instr == this.toString() ? "selected" : "";
-  }
-
 });
 
 Template.track.events({
@@ -87,14 +61,6 @@ Template.track.events({
 
   "click .remove-track": function () {
     Meteor.call("removeTrack", this._id);
-  },
-
-  "change .select-instrument": function (e) {
-    fields = {
-      "instrument": $(e.target).find(":selected").text()
-    }
-
-    Tracks.update(this._id, {$set: fields}, false);
   },
 
   "click .beat": function (e) {
@@ -110,11 +76,4 @@ Template.track.events({
     Tracks.update(track._id, {$set: updateFields}, false);
   },
 
-  "set .volume-slider": function (e) {
-    volume = $(e.target).val();
-    volume = Math.floor(volume);
-
-    track = Template.parentData();
-    Tracks.update(track._id, {$set: {volume: volume}}, false);
-  }
 });
