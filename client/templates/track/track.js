@@ -2,8 +2,11 @@ Template.track.created = function () {
 
   this.autorun(function () {
     var self = this.templateInstance();
-
     currBeat = Session.get("absoluteTime") % 16;
+
+    if (self.data.muted) {
+      return;
+    }
 
     if (_.has(self.data, currBeat) && self.data[currBeat]) {
       FastPlayer.playSound(self.data.instrument, self.data.volume);

@@ -40,4 +40,8 @@ Template.trackOptions.events({
     Meteor.call("removeTrack", this._id);
   },
 
+  "click .mute-button": function () {
+    muted = this.muted ? true : false ;
+    Tracks.update(this._id, {$set: {muted: !muted}}, false);
+  }
 });

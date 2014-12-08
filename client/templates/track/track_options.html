@@ -15,9 +15,15 @@
       <button class="reset-button">
         <i class="fa fa-refresh"></i>
       </button>
+      {{#if muted }}
+      <button class="mute-button muted">
+        <i class="fa fa-volume-off"></i>
+      </button>
+      {{else}}
       <button class="mute-button">
         <i class="fa fa-volume-up"></i>
       </button>
+      {{/if}}
     </div>
   </div>
 </template>

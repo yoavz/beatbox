@@ -135,6 +135,10 @@ body {
     }
 
     .track-options .reset-remove .mute-button {
+      background: lightyellow;
+    }
+
+    .track-options .reset-remove .mute-button.muted {
       background: lightgrey;
     }
 
