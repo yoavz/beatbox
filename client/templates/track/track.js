@@ -2,7 +2,7 @@ Template.track.created = function () {
 
   this.autorun(function () {
     var self = this.templateInstance();
-    currBeat = Session.get("absoluteTime") % 16;
+    currBeat = Session.get("absoluteTime") % numBeats(self.data);
 
     if (self.data.muted) {
       return;
@@ -29,8 +29,6 @@ Template.track.rendered = function () {
       'max': 100
     }
   });
-  //
-  // console.log(track.volume);
 
 };
 
@@ -38,19 +36,24 @@ Template.track.helpers({
 
   beats: function () {
 
+    // get the total amount of beats
+    beatsCount = numBeats(this);
+
     // This is super ugly, is there a functional way
     // to do this?
     res = []
-    for (i=0; i<16; i++) {
+    for (i=0; i<beatsCount; i++) {
       if (_.has(this, i) && this[i]) {
         res.push({
           pos: i,
           active: true,
+          numBeats: beatsCount
         });
       } else {
         res.push({
           pos: i,
-          active: false
+          active: false,
+          numBeats: beatsCount
         });
       }
     }

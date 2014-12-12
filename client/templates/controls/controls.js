@@ -1,6 +1,10 @@
 Template.controls.helpers({
-  "playStatus": function () {
-    return !isPlaying() ? "&#9654;" : "&#9616;&#9616;"
+  "isPlaying" : function () {
+    return isPlaying();
+  },
+
+  "tempo": function () {
+    return TEMPO;
   }
 });
 

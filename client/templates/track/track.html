@@ -1,8 +1,11 @@
 <template name="track">
   <div class="track-container">
     {{> trackOptions}}
-    {{#each beats}}
-      {{> beat}}
-    {{/each}}
+    <div class="beats-container">
+      {{#each beats}}
+        {{> beat}}
+      {{/each}}
+    </div>
+    {{> trackBeatOptions}}
   </div>
 </template>

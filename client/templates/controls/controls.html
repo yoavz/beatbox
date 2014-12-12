@@ -1,6 +1,19 @@
 <template name="controls">
   <div class="global-controls">
-    <div class="stop-start">{{{playStatus}}}</div>
-    <div class="reset-beats">R</div>
+    <div class="stop-start">
+      {{#if isPlaying}}
+        <i class="fa fa-stop fa-lg"></i>
+      {{else}}
+        <i class="fa fa-play fa-lg"></i>
+      {{/if}}
+    </div>
+    <div class="tempo">
+      <div class="tempo-value">{{tempo}}</div>
+      <div class="tempo-control">
+        <div class="tempo-increase">+</div>
+        <div class="tempo-decrease">-</div>
+      </div>
+    </div>
+    <!-- <div class="reset&#45;beats">R</div> -->
   </div>
 </template>
