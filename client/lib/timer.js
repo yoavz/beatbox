@@ -23,3 +23,10 @@ pause = function() {
   Meteor.clearInterval(INTERVAL);
   INTERVAL = null;
 }
+
+increaseTempo = function () {
+
+}
+
+decreaseTempo = function () {
+}

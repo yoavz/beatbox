@@ -41,6 +41,8 @@ h1 {
   display: relative;
   background: darkgrey;
   padding: 10px;
+  height: inherit;
+  overflow: auto;
 
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
@@ -49,11 +51,10 @@ h1 {
 }
 
   .global-controls .stop-start  {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
     padding: 10px;
     text-align: center;
+    width: 10%;
+    float: left;
     
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
@@ -67,38 +68,67 @@ h1 {
   }
 
   .tempo {
-    display: inline-block;
-    /* height: 40px; */
-    /* width: 100px; */
+    width: 20%;
+    height: 42px;
+    float: left;
+    margin-left: 20px;
+    background-color: lightgrey;
 
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
-    border: 2px solid;
   }
 
-    .tempo .tempo-value {
-      display: inline-block;
-      text-align: center;
-      width: 100px;
-      /* padding: 10px; */
+  .tempo.click {
+    background-color: lightyellow;
+  }
+
+    .tempo button {
+      border: none;
+      height: 100%;
+      cursor: pointer;
+      background-color: black;
+      color: white;
     }
 
-    .tempo .tempo-control {
-      display: inline-block;
-      width: 100%;
-      height: 20px;
+    .tempo button:hover {
+      background-color: grey;
+    }
+
+    .tempo button:active {
+      background-color: lightgrey;
+    }
+
+    .tempo .tempo-value {
+      position: relative;
+      width: 60%; 
+      float: left;
+      text-align: center;
+
+      /* vertical align */
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
     }
 
     .tempo .tempo-increase {
       display: inline-block;
-      float: left;
-      width: 50%;
+      width: 20%;
+
+      border-radius: 0px 5px 5px 0px;
+      -moz-border-radius: 0px 5px 5px 0px;
+      -webkit-border-radius: 0px 5px 5px 0px;
     }
 
     .tempo .tempo-decrease {
       display: inline-block;
-      width: 50%;
+      width: 20%;
+      float: left;
+
+      border-radius: 5px 0px 0px 5px;
+      -moz-border-radius: 5px 0px 0px 5px
+      -webkit-border-radius: 5px 0px 0px 5px
     }
 
   .global-controls .reset-beats {
@@ -232,6 +262,46 @@ h1 {
   -o-transition: all 1.0s ease;
   transition: all 1.0s ease;
 }
+
+/* BEAT-SELECTION */
+
+.beat-selection button {
+  cursor: pointer;
+  border: none;
+
+  height: 40%;
+  margin-right: 5px;
+  padding: 0 auto;  
+
+  background-color: black;
+  color: white;
+  /* border: 1px solid gray; */
+}
+
+.beat-selection button:hover  {
+  background-color: gray;
+}
+
+.beat-selection button:disabled {
+  background-color: gray;
+}
+
+.beat-selection button:active {
+  background-color: lightgrey;
+}
+
+.beat-selection .decrease-beats {
+  border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+}
+
+.beat-selection .increase-beats {
+  border-radius: 0px 0px 5px 5px;
+  -moz-border-radius: 0px 0px 5px 5px;
+  -webkit-border-radius: 0px 0px 5px 5px;
+}
+
 
 /* BEATS */
 

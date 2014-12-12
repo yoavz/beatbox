@@ -3,14 +3,14 @@ Template.trackBeatOptions.helpers({
     return numBeats(this);
   },
 
-  "increaseNumBeats": function () {
+  "increaseDisabled": function () {
     beats = numBeats(this);
-    return (beats < 32) ? "<i class=\"fa fa-plus-circle increase-beats\"></i>" : ""
+    return (beats < 32) ? "" : "disabled"
   },
 
-  "decreaseNumBeats": function () {
+  "decreaseDisabled": function () {
     beats = numBeats(this);
-    return (beats > 16) ? "<i class=\"fa fa-minus-circle decrease-beats\"></i>" : ""
+    return (beats > 1) ? "" : "disabled"
   }
 });
 

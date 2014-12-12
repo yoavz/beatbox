@@ -1,7 +1,10 @@
 <template name="trackBeatOptions">
 <div class="beat-selection">
-  {{{ decreaseNumBeats }}}
-  {{{ increaseNumBeats }}}
-  {{numBeats}}
+  <button class="decrease-beats" {{decreaseDisabled}}>
+    <i class="fa fa-minus fa-lg"></i>
+  </button>
+  <button class="increase-beats" {{increaseDisabled}}>
+    <i class="fa fa-plus fa-lg"></i>
+  </button>
 </div>
 </template>
