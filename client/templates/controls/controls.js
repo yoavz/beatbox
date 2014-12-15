@@ -4,7 +4,7 @@ Template.controls.created = function () {
     var self = this.templateInstance();
     var time = Session.get("absoluteTime");
     
-    if (isPlaying() && time % 4 === 0) {
+    if (Metronome.isActive() && time % 4 === 0) {
       $(".tempo").addClass("click");
       Meteor.setTimeout(function () {
         $(".tempo").removeClass("click");
@@ -15,11 +15,11 @@ Template.controls.created = function () {
 
 Template.controls.helpers({
   "isPlaying" : function () {
-    return isPlaying();
+    return Metronome.isActive();
   },
 
   "tempo": function () {
-    return TEMPO;
+    return Metronome.currentTempo();
   }
 });
 
@@ -29,17 +29,19 @@ Template.controls.events({
   },
 
   "click .stop-start": function () {
-    if (isPlaying()) {
-      stop();
+    if (Metronome.isActive()) {
+      Metronome.stop();
     } else {
-      play();
+      Metronome.play();
     }
   }, 
 
   "click .tempo-increase": function () {
+    Metronome.changeTempo(Metronome.currentTempo() + 5);
   },
 
   "click .tempo-decrease": function () {
+    Metronome.changeTempo(Metronome.currentTempo() - 5);
   }
 });
 
