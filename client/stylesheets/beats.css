@@ -1,0 +1,122 @@
+.beat-container {
+  display: inline-block;
+  vertical-align: middle;
+
+  padding-bottom: 5px;
+}
+
+  .beat-container .beat {
+    position: relative;
+    margin: 3px;
+    width: 23px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    -webkit-transition: all 0.1s;
+       -moz-transition: all 0.1s;
+            transition: all 0.1s;
+  }
+
+  .beat-container .beat:active, .beat-container .beat.active {
+    -webkit-transform: translate(0,5px);
+    -moz-transform: translate(0,5px);
+    transform: translate(0, 5px);
+  }
+
+  /* A bunch of colors for each of the four beats
+   * taken from the IBM Design Language palette */
+  /* http://www.ibm.com/design/language/resources/swatch-book.shtml 
+   * I should really use SCSS here... */
+
+
+  .beat {
+    background: #777677;
+    -webkit-box-shadow: 0px 6px 0px #959595;
+       -moz-box-shadow: 0px 6px 0px #959595;
+            box-shadow: 0px 6px 0px #959595;
+  }
+
+  .beat:active, .beat.active {
+    background: #5A5A5A;
+    -webkit-box-shadow: 0px 1px 0px #;
+       -moz-box-shadow: 0px 1px 0px #777677;
+            box-shadow: 0px 1px 0px #777677;
+  }
+
+  .beat-container:nth-of-type(16n+1) .beat ,
+  .beat-container:nth-of-type(16n+2) .beat ,
+  .beat-container:nth-of-type(16n+3) .beat ,
+  .beat-container:nth-of-type(16n+4) .beat
+  {
+    background: #4178BE;
+    -webkit-box-shadow: 0px 6px 0px #325C80;
+       -moz-box-shadow: 0px 6px 0px #325C80;
+            box-shadow: 0px 6px 0px #325C80;
+  }
+
+  .beat-container:nth-of-type(16n+1) .beat:active, 
+  .beat-container:nth-of-type(16n+1) .beat.active,
+  .beat-container:nth-of-type(16n+2) .beat:active, 
+  .beat-container:nth-of-type(16n+2) .beat.active,
+  .beat-container:nth-of-type(16n+3) .beat:active, 
+  .beat-container:nth-of-type(16n+3) .beat.active,
+  .beat-container:nth-of-type(16n+4) .beat:active, 
+  .beat-container:nth-of-type(16n+4) .beat.active
+  {
+    background: #264A60;
+    -webkit-box-shadow: 0px 1px 0px #1D3649;
+       -moz-box-shadow: 0px 1px 0px #1D3649;
+            box-shadow: 0px 1px 0px #1D3649;
+  }
+
+  .beat-container:nth-of-type(16n+5) .beat ,
+  .beat-container:nth-of-type(16n+6) .beat ,
+  .beat-container:nth-of-type(16n+7) .beat ,
+  .beat-container:nth-of-type(16n+8) .beat
+  {
+    background: #4B8400;
+    -webkit-box-shadow: 0px 6px 0px #2D660A;
+       -moz-box-shadow: 0px 6px 0px #2D660A;
+            box-shadow: 0px 6px 0px #2D660A;
+  }
+
+  .beat-container:nth-of-type(16n+5) .beat:active, 
+  .beat-container:nth-of-type(16n+5) .beat.active,
+  .beat-container:nth-of-type(16n+6) .beat:active, 
+  .beat-container:nth-of-type(16n+6) .beat.active,
+  .beat-container:nth-of-type(16n+7) .beat:active, 
+  .beat-container:nth-of-type(16n+7) .beat.active,
+  .beat-container:nth-of-type(16n+8) .beat:active, 
+  .beat-container:nth-of-type(16n+8) .beat.active
+  {
+    background: #144D14;
+    -webkit-box-shadow: 0px 1px 0px #0A3C02;
+       -moz-box-shadow: 0px 1px 0px #0A3C02;
+            box-shadow: 0px 1px 0px #0A3C02;
+  }
+
+  /* INDICATOR */
+
+  .beat-container .beat .indicator {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width:10px;
+    height:10px;
+    border-radius:5px;
+  }
+
+  .beat-container .beat .indicator {
+    background: white;
+  }
+
+  .beat-container .beat.active .indicator {
+    background: yellow;
+  }
+
+  .beat-container .beat.current,
+  .beat-container .beat.active.current {
+    background: yellow;
+  }
+
