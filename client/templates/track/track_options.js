@@ -42,7 +42,6 @@ Template.trackOptions.events({
   },
 
   "click .mute-button": function () {
-    muted = this.muted ? true : false ;
-    Tracks.update(this._id, {$set: {muted: !muted}}, false);
+    Tracks.update(this._id, {$set: {muted: !this.muted}}, false);
   }
 });
