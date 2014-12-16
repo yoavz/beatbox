@@ -4,8 +4,9 @@ Template.trackOptions.helpers({
   },
 
   instrumentColor: function () {
-    rainbow = ["#78c5d6", "#459ba8", "#79c267", "#c5d647",
-               "#f5d63d", "#f28c33", "#e868a2", "#bf62a6"]
+    rainbow = ["#5AAAFA", "#8CD211", "#41D6C3", "#BA8FF7",
+               "#FF71D4", "#FF7D87", "#FF7832", "#EFC100",
+               "#AEB8B8", "#B8AEAE"]
 
     return rainbow[_.indexOf(INSTRUMENTS_808, this.instrument) % rainbow.length]
   }

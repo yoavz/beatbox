@@ -96,6 +96,58 @@
             box-shadow: 0px 1px 0px #0A3C02;
   }
 
+  .beat-container:nth-of-type(16n+9) .beat ,
+  .beat-container:nth-of-type(16n+10) .beat ,
+  .beat-container:nth-of-type(16n+11) .beat ,
+  .beat-container:nth-of-type(16n+12) .beat
+  {
+    background: #9855D4;
+    -webkit-box-shadow: 0px 6px 0px #734098;
+       -moz-box-shadow: 0px 6px 0px #734098;
+            box-shadow: 0px 6px 0px #734098;
+  }
+
+  .beat-container:nth-of-type(16n+9) .beat:active, 
+  .beat-container:nth-of-type(16n+9) .beat.active,
+  .beat-container:nth-of-type(16n+10) .beat:active, 
+  .beat-container:nth-of-type(16n+10) .beat.active,
+  .beat-container:nth-of-type(16n+11) .beat:active, 
+  .beat-container:nth-of-type(16n+11) .beat.active,
+  .beat-container:nth-of-type(16n+12) .beat:active, 
+  .beat-container:nth-of-type(16n+12) .beat.active
+  {
+    background: #562F72;
+    -webkit-box-shadow: 0px 1px 0px #412356;
+       -moz-box-shadow: 0px 1px 0px #412356;
+            box-shadow: 0px 1px 0px #412356;
+  }
+
+  .beat-container:nth-of-type(16n+13) .beat ,
+  .beat-container:nth-of-type(16n+14) .beat ,
+  .beat-container:nth-of-type(16n+15) .beat ,
+  .beat-container:nth-of-type(16n+16) .beat
+  {
+    background: #E71D32;
+    -webkit-box-shadow: 0px 6px 0px #AD1625;
+       -moz-box-shadow: 0px 6px 0px #AD1625;
+            box-shadow: 0px 6px 0px #AD1625;
+  }
+
+  .beat-container:nth-of-type(16n+13) .beat:active, 
+  .beat-container:nth-of-type(16n+13) .beat.active,
+  .beat-container:nth-of-type(16n+14) .beat:active, 
+  .beat-container:nth-of-type(16n+14) .beat.active,
+  .beat-container:nth-of-type(16n+15) .beat:active, 
+  .beat-container:nth-of-type(16n+15) .beat.active,
+  .beat-container:nth-of-type(16n+16) .beat:active, 
+  .beat-container:nth-of-type(16n+16) .beat.active
+  {
+    background: #8C101C;
+    -webkit-box-shadow: 0px 1px 0px #6E0A1E;
+       -moz-box-shadow: 0px 1px 0px #6E0A1E;
+            box-shadow: 0px 1px 0px #6E0A1E;
+  }
+
   /* INDICATOR */
 
   .beat-container .beat .indicator {
@@ -109,14 +161,19 @@
 
   .beat-container .beat .indicator {
     background: white;
+    opacity: 0.4;
   }
 
   .beat-container .beat.active .indicator {
-    background: yellow;
+    opacity: 0.9;
   }
 
-  .beat-container .beat.current,
-  .beat-container .beat.active.current {
-    background: yellow;
+  .beat-container .beat.active.current .indicator {
+    opacity: 0.9;
+    background: red;
   }
 
+  .beat-container .beat.current .indicator {
+    opacity: 0.9;
+    background: yellow;
+  }
