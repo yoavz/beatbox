@@ -16,20 +16,10 @@ Template.trackBeatOptions.helpers({
 
 Template.trackBeatOptions.events({
   "click .increase-beats": function () {
-    beats = numBeats(this); 
-
-    updateFields = {}
-    updateFields[beats] = false;
-
-    Tracks.update(this._id, {$set: updateFields}, false);
+    Meteor.call("increaseBeats", this._id);
   },
 
   "click .decrease-beats": function () {
-    beats = numBeats(this); 
-
-    updateFields = {}
-    updateFields[beats-1] = "";
-
-    Tracks.update(this._id, {$unset: updateFields}, false);
+    Meteor.call("decreaseBeats", this._id);
   }
 });

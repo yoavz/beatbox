@@ -1,18 +1,19 @@
-Template.beatbox.created = function () {
+Template.room.created = function () {
   // init the music
   FastPlayer.loadBeatboxSounds();
 }
 
-Template.beatbox.helpers({
+Template.room.helpers({
   tracks: function () {
     return Tracks.find()
   },
 });
 
-Template.beatbox.events({
+Template.room.events({
 
   "click .add-track": function () {
-    Meteor.call("newTrack");
+    console.log(this);
+    Meteor.call("newTrack", this._id);
   },
 
 });
