@@ -1,3 +1,14 @@
+Template.trackOptions.rendered = function () {
+
+  // make the noui slider reactively set it's value
+  this.autorun(function () {
+    var self = this.templateInstance();
+    self.$(".volume-slider").val(self.data.volume);
+  });
+
+
+}
+
 Template.trackOptions.helpers({
   instruments: function () {
     return INSTRUMENTS_808;
