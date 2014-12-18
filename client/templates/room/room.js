@@ -12,7 +12,6 @@ Template.room.helpers({
 Template.room.events({
 
   "click .add-track": function () {
-    console.log(this);
     Meteor.call("newTrack", this._id);
   },
 

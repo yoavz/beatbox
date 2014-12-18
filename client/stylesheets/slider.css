@@ -1,0 +1,34 @@
+/* handles don't extend */
+
+.noUi-horizontal {
+	padding-right: 18px;
+  background-color: lightblue;
+  border: 2px solid black;
+}
+
+.noUi-horizontal .noUi-origin  {
+	right: -2px;
+}
+
+.noUi-horizontal .noUi-handle {
+	left: -1px;
+  top: -6px;
+  width: 25px;
+  height: 25px;
+
+  background-color: lightcoral;
+  box-shadow: none;
+  border: 2px solid black;
+
+
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+
+/* remove the two line thingies */
+
+.noUi-handle:before, .noUi-handle:after {
+  background: none !important;
+}

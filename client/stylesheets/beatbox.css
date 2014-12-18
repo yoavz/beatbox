@@ -152,10 +152,9 @@ h1 {
   margin: 10px 0px;
   background: darkgrey;
 
-  /* border-radius: 5px 5px 5px 5px; */
-  /* -moz-border-radius: 5px 5px 5px 5px; */
-  /* -webkit-border-radius: 5px 5px 5px 5px; */
-  /* border: 2px solid #0C7489; */
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
 }
 
 /* TRACK OPTIONS */
