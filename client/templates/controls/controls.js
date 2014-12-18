@@ -37,11 +37,11 @@ Template.controls.events({
   }, 
 
   "click .tempo-increase": function () {
-    Metronome.changeTempo(Metronome.currentTempo() + 5);
+    Metronome.changeTempo(Metronome.currentTempo() + 10);
   },
 
   "click .tempo-decrease": function () {
-    Metronome.changeTempo(Metronome.currentTempo() - 5);
+    Metronome.changeTempo(Metronome.currentTempo() - 10);
   }
 });
 

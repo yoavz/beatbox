@@ -122,10 +122,18 @@ a:hover {
       text-align: center;
 
       /* vertical align */
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-              transform: translateY(-50%);
+      /* top: 50%; */
+      /* -webkit-transform: translateY(-50%); */
+      /*     -ms-transform: translateY(-50%); */
+      /*         transform: translateY(-50%); */
+    }
+
+    .tempo .tempo-value .tempo-number {
+      font-size: 20px;
+    }
+
+    .tempo .tempo-value .tempo-label {
+      font-size: 12px;
     }
 
     .tempo .tempo-increase {
