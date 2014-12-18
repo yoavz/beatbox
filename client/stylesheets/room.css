@@ -107,8 +107,8 @@
   }
 
 .room-url {
-  float: right ;
-  margin: 10px;
+  float: left ;
+  margin: 0px 10px;
   margin-bottom: 0px;
 }
 
