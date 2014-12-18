@@ -1,6 +1,11 @@
 <template name="layout">
 <div class="container">
-  <h1><a href="{{pathFor 'home'}}">Meteor Beats</a></h1>
+  <div class="header">
+    <h1 class="title"><a href="{{pathFor 'home'}}">Meteor Beats</a></h1>
+    <span class="credits">
+      <a href="http://yoavz.com">yoavz</a> | <a href="">source</a>
+    </span>
+  </div>
   {{> yield}}
 </div>
 </template>
