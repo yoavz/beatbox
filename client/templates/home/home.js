@@ -1,5 +1,11 @@
 Template.home.helpers({
 
+  "buttonStyle": function () {
+    color = RAINBOW[_.random(RAINBOW.length-1)];
+    return "background-color: " + color + ";" +
+           "border-color: " + color + ";";
+  }
+
 });
 
 Template.home.events({

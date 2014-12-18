@@ -15,11 +15,7 @@ Template.trackOptions.helpers({
   },
 
   instrumentColor: function () {
-    rainbow = ["#5AAAFA", "#8CD211", "#41D6C3", "#BA8FF7",
-               "#FF71D4", "#FF7D87", "#FF7832", "#EFC100",
-               "#AEB8B8", "#B8AEAE"]
-
-    return rainbow[_.indexOf(INSTRUMENTS_808, this.instrument) % rainbow.length]
+    return RAINBOW[_.indexOf(INSTRUMENTS_808, this.instrument) % RAINBOW.length]
   }
 });
 

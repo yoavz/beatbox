@@ -14,12 +14,17 @@ Template.controls.created = function () {
 }
 
 Template.controls.helpers({
-  "isPlaying" : function () {
+  isPlaying: function () {
     return Metronome.isActive();
   },
 
-  "tempo": function () {
+  tempo: function () {
     return Metronome.currentTempo();
+  },
+
+  roomUrl: function () {
+    console.log("hey");
+    return document.URL
   }
 });
 

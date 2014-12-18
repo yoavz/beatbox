@@ -1,0 +1,77 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: url('/img/pw_maze_black.png');
+  margin: 0 auto;
+  font-family: 'Lato', 'sans-serif';
+}
+
+a {
+  color: white;
+  text-decoration:none;
+}
+
+a:hover {
+  color: darkgray;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.header {
+  overflow: auto;
+}
+
+  .header .title {
+    width: 50%;
+    float: left;
+    padding: 10px;
+  }
+
+  .header .credits {
+    width: 50%;
+    float: right;
+    color: white;
+    text-align: right;
+    padding: 10px;
+  }
+
+/* HOME */
+
+.home-container {
+  text-align:center;
+  color: white;
+}
+
+.home-container > * {
+  padding: 10px;
+}
+
+button.create-room {
+  font-family: 'Lato', 'sans-serif';
+  font-size: 20px;
+  border-radius: 10px;
+  
+  width: 200px;
+  height: 50px;
+}
+
+
