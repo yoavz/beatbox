@@ -8,26 +8,17 @@
       {{/if}}
     </div>
     <div class="tempo">
-      <button class="tempo-decrease">
+      <button class="tempo-decrease" {{decreaseDisabled}}>
         <i class="fa fa-minus"></i>
       </button>
       <div class="tempo-value">
         <div class="tempo-number">{{tempo}}</div>
         <div class="tempo-label">bpm</div>
       </div>
-      <button class="tempo-increase">
+      <button class="tempo-increase" {{increaseDisabled}}>
         <i class="fa fa-plus"></i>
       </button>
     </div>
-
-    <!-- <div class="room&#45;info"> -->
-    <!--   <div class="room&#45;title"> -->
-    <!--     Title -->
-    <!--   </div> -->
-    <!--   <div class="room&#45;users"> -->
-    <!--     N collaborators -->
-    <!--   </div> -->
-    <!-- </div> -->
 
     <div class="room-url">
       <textarea rows="1" cols="35" onclick="this.focus();this.select()" readonly="readonly">{{roomUrl}}</textarea>

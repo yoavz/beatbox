@@ -25,7 +25,16 @@ Template.controls.helpers({
 
   roomUrl: function () {
     return document.URL
+  },
+
+  increaseDisabled: function () {
+    return Metronome.currentTempo() >= 250 ? "disabled" : "";
+  },
+
+  decreaseDisabled: function () {
+    return Metronome.currentTempo() < 50 ? "disabled" : "";
   }
+
 });
 
 Template.controls.events({

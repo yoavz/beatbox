@@ -17,7 +17,9 @@
   height: 25px;
   cursor: pointer;
 
-  background-color: gray;
+  background: url(/img/volume-icon.png);
+  background-color: white;
+  background-size: contain;
   box-shadow: none;
   border: 1px solid black;
 
