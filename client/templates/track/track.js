@@ -61,6 +61,10 @@ Template.track.helpers({
     return res;
   }, 
 
+  color: function(darkness) {
+    color = colors[_.indexof(instruments_808, this.instrument) % colors.length]
+    return PALETTES[color][darkness];
+  }
 
 });
 

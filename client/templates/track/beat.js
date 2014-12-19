@@ -9,4 +9,27 @@ Template.beat.helpers({
 
   }, 
 
+  beatStyle: function () {
+    
+    instrument = Template.parentData(1).instrument;
+    color = COLORS[_.indexOf(INSTRUMENTS_808, instrument) % COLORS.length]
+
+    if (this.active) {
+      a = 20;
+      p = "0px 1px 0px";
+    } else {
+      a = 0;
+      p = "0px 6px 0px"
+    }
+
+    res ="background: " + PALETTES[color][40+a] + ";" 
+         + "-webkit-box-shadow: " + p + " " + PALETTES[color][50+a] + ";"
+         + "-moz-box-shadow: " + p + " " + PALETTES[color][50+a] + ";" 
+         + "box-shadow: " + p + " " + PALETTES[color][50+a] + ";";
+
+    console.log(res);
+
+    return res;
+  }
+
 });

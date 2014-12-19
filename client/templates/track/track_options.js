@@ -14,9 +14,11 @@ Template.trackOptions.helpers({
     return INSTRUMENTS_808;
   },
 
-  instrumentColor: function () {
-    return RAINBOW[_.indexOf(INSTRUMENTS_808, this.instrument) % RAINBOW.length]
+  color: function(darkness) {
+    color = COLORS[_.indexOf(INSTRUMENTS_808, this.instrument) % COLORS.length]
+    return PALETTES[color][darkness];
   }
+
 });
 
 Template.trackOptions.events({

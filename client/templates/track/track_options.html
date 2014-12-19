@@ -1,24 +1,24 @@
 <template name="trackOptions">
   <div class="track-options">
-    <div class="instrument" style="background: {{instrumentColor}}">
+    <div class="instrument" style="background: {{color 30}}">
       <span class="instrument-name">{{ instrument }}</span>
     </div>
     <div class="volume-slider-container">
-      <div class="volume-slider"></div>
+      <div class="volume-slider" style="background: {{color 20}}"></div>
     </div>
     <div class="reset-remove">
-      <button class="remove-button">
+      <button class="remove-button" style="background-color: {{color 20}}">
         <i class="fa fa-trash"></i>
       </button>
-      <button class="reset-button">
+      <button class="reset-button" style="background-color: {{color 20}}">
         <i class="fa fa-refresh"></i>
       </button>
       {{#if muted }}
-      <button class="mute-button muted">
+      <button class="mute-button muted" >
         <i class="fa fa-volume-off"></i>
       </button>
       {{else}}
-      <button class="mute-button">
+      <button class="mute-button" style="background-color: {{color 20}}">
         <i class="fa fa-volume-up"></i>
       </button>
       {{/if}}

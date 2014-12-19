@@ -1,5 +1,6 @@
 Template.controls.created = function () {
 
+
   this.autorun(function () {
     var self = this.templateInstance();
     var time = Session.get("absoluteTime");

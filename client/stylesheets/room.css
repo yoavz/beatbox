@@ -50,6 +50,7 @@
       cursor: pointer;
       background-color: black;
       color: white;
+      border: 2px solid black;
     }
 
     .tempo button:hover {
@@ -210,7 +211,7 @@
       text-align: center;
       cursor: pointer;
 
-      border:1px solid #314179;
+      border:2px solid black;
     }
 
     .track-options .reset-remove .remove-button {
