@@ -1,16 +1,22 @@
 Template.trackBeatOptions.helpers({
-  "numBeats": function () {
+  numBeats: function () {
     return numBeats(this);
   },
 
-  "increaseDisabled": function () {
+  increaseDisabled: function () {
     beats = numBeats(this);
     return (beats < 32) ? "" : "disabled"
   },
 
-  "decreaseDisabled": function () {
+  decreaseDisabled: function () {
     beats = numBeats(this);
     return (beats > 1) ? "" : "disabled"
+  },
+
+  color: function (darkness) {
+    instrument = Template.parentData().instrument;
+    color = getInstrumentColor(instrument);
+    return "color: " + PALETTES[color][darkness] + ";"
   }
 });
 

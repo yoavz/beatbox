@@ -45,85 +45,91 @@
               box-shadow: 0px 1px 0px palette($color, 70);
     }
 
-  .beat-container:nth-of-type(16n+1) .beat ,
-  .beat-container:nth-of-type(16n+2) .beat ,
-  .beat-container:nth-of-type(16n+3) .beat ,
-  .beat-container:nth-of-type(16n+4) .beat
-  {
-    @include beat-up("blue");
+  .beat-container .beat:active {
+    -webkit-box-shadow: 0px 1px 0px;
+       -moz-box-shadow: 0px 1px 0px;
+            box-shadow: 0px 1px 0px;
   }
 
-  .beat-container:nth-of-type(16n+1) .beat:active, 
-  .beat-container:nth-of-type(16n+1) .beat.active,
-  .beat-container:nth-of-type(16n+2) .beat:active, 
-  .beat-container:nth-of-type(16n+2) .beat.active,
-  .beat-container:nth-of-type(16n+3) .beat:active, 
-  .beat-container:nth-of-type(16n+3) .beat.active,
-  .beat-container:nth-of-type(16n+4) .beat:active, 
-  .beat-container:nth-of-type(16n+4) .beat.active
-  {
-    @include beat-active("blue");
-  }
-
-  .beat-container:nth-of-type(16n+5) .beat ,
-  .beat-container:nth-of-type(16n+6) .beat ,
-  .beat-container:nth-of-type(16n+7) .beat ,
-  .beat-container:nth-of-type(16n+8) .beat
-  {
-    @include beat-up("green");
-  }
-
-  .beat-container:nth-of-type(16n+5) .beat:active, 
-  .beat-container:nth-of-type(16n+5) .beat.active,
-  .beat-container:nth-of-type(16n+6) .beat:active, 
-  .beat-container:nth-of-type(16n+6) .beat.active,
-  .beat-container:nth-of-type(16n+7) .beat:active, 
-  .beat-container:nth-of-type(16n+7) .beat.active,
-  .beat-container:nth-of-type(16n+8) .beat:active, 
-  .beat-container:nth-of-type(16n+8) .beat.active
-  {
-    @include beat-active("green");
-  }
-
-  .beat-container:nth-of-type(16n+9) .beat ,
-  .beat-container:nth-of-type(16n+10) .beat ,
-  .beat-container:nth-of-type(16n+11) .beat ,
-  .beat-container:nth-of-type(16n+12) .beat
-  {
-    @include beat-up("purple");
-  }
-
-  .beat-container:nth-of-type(16n+9) .beat:active, 
-  .beat-container:nth-of-type(16n+9) .beat.active,
-  .beat-container:nth-of-type(16n+10) .beat:active, 
-  .beat-container:nth-of-type(16n+10) .beat.active,
-  .beat-container:nth-of-type(16n+11) .beat:active, 
-  .beat-container:nth-of-type(16n+11) .beat.active,
-  .beat-container:nth-of-type(16n+12) .beat:active, 
-  .beat-container:nth-of-type(16n+12) .beat.active
-  {
-    @include beat-active("purple");
-  }
-
-  .beat-container:nth-of-type(16n+13) .beat ,
-  .beat-container:nth-of-type(16n+14) .beat ,
-  .beat-container:nth-of-type(16n+15) .beat ,
-  .beat-container:nth-of-type(16n+16) .beat
-  {
-    @include beat-up("red");
-  }
-
-  .beat-container:nth-of-type(16n+13) .beat:active, 
-  .beat-container:nth-of-type(16n+13) .beat.active,
-  .beat-container:nth-of-type(16n+14) .beat:active, 
-  .beat-container:nth-of-type(16n+14) .beat.active,
-  .beat-container:nth-of-type(16n+15) .beat:active, 
-  .beat-container:nth-of-type(16n+15) .beat.active,
-  .beat-container:nth-of-type(16n+16) .beat:active, 
-  .beat-container:nth-of-type(16n+16) .beat.active
-  {
-    @include beat-active("red");
-  }
+  // .beat-container:nth-of-type(16n+1) .beat ,
+  // .beat-container:nth-of-type(16n+2) .beat ,
+  // .beat-container:nth-of-type(16n+3) .beat ,
+  // .beat-container:nth-of-type(16n+4) .beat
+  // {
+  //   @include beat-up("blue");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+1) .beat:active, 
+  // .beat-container:nth-of-type(16n+1) .beat.active,
+  // .beat-container:nth-of-type(16n+2) .beat:active, 
+  // .beat-container:nth-of-type(16n+2) .beat.active,
+  // .beat-container:nth-of-type(16n+3) .beat:active, 
+  // .beat-container:nth-of-type(16n+3) .beat.active,
+  // .beat-container:nth-of-type(16n+4) .beat:active, 
+  // .beat-container:nth-of-type(16n+4) .beat.active
+  // {
+  //   @include beat-active("blue");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+5) .beat ,
+  // .beat-container:nth-of-type(16n+6) .beat ,
+  // .beat-container:nth-of-type(16n+7) .beat ,
+  // .beat-container:nth-of-type(16n+8) .beat
+  // {
+  //   @include beat-up("green");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+5) .beat:active, 
+  // .beat-container:nth-of-type(16n+5) .beat.active,
+  // .beat-container:nth-of-type(16n+6) .beat:active, 
+  // .beat-container:nth-of-type(16n+6) .beat.active,
+  // .beat-container:nth-of-type(16n+7) .beat:active, 
+  // .beat-container:nth-of-type(16n+7) .beat.active,
+  // .beat-container:nth-of-type(16n+8) .beat:active, 
+  // .beat-container:nth-of-type(16n+8) .beat.active
+  // {
+  //   @include beat-active("green");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+9) .beat ,
+  // .beat-container:nth-of-type(16n+10) .beat ,
+  // .beat-container:nth-of-type(16n+11) .beat ,
+  // .beat-container:nth-of-type(16n+12) .beat
+  // {
+  //   @include beat-up("purple");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+9) .beat:active, 
+  // .beat-container:nth-of-type(16n+9) .beat.active,
+  // .beat-container:nth-of-type(16n+10) .beat:active, 
+  // .beat-container:nth-of-type(16n+10) .beat.active,
+  // .beat-container:nth-of-type(16n+11) .beat:active, 
+  // .beat-container:nth-of-type(16n+11) .beat.active,
+  // .beat-container:nth-of-type(16n+12) .beat:active, 
+  // .beat-container:nth-of-type(16n+12) .beat.active
+  // {
+  //   @include beat-active("purple");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+13) .beat ,
+  // .beat-container:nth-of-type(16n+14) .beat ,
+  // .beat-container:nth-of-type(16n+15) .beat ,
+  // .beat-container:nth-of-type(16n+16) .beat
+  // {
+  //   @include beat-up("red");
+  // }
+  //
+  // .beat-container:nth-of-type(16n+13) .beat:active, 
+  // .beat-container:nth-of-type(16n+13) .beat.active,
+  // .beat-container:nth-of-type(16n+14) .beat:active, 
+  // .beat-container:nth-of-type(16n+14) .beat.active,
+  // .beat-container:nth-of-type(16n+15) .beat:active, 
+  // .beat-container:nth-of-type(16n+15) .beat.active,
+  // .beat-container:nth-of-type(16n+16) .beat:active, 
+  // .beat-container:nth-of-type(16n+16) .beat.active
+  // {
+  //   @include beat-active("red");
+  // }
 
   /* INDICATOR */
 

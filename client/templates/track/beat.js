@@ -12,7 +12,7 @@ Template.beat.helpers({
   beatStyle: function () {
     
     instrument = Template.parentData(1).instrument;
-    color = COLORS[_.indexOf(INSTRUMENTS_808, instrument) % COLORS.length]
+    color = getInstrumentColor(instrument); 
 
     if (this.active) {
       a = 20;
@@ -27,7 +27,7 @@ Template.beat.helpers({
          + "-moz-box-shadow: " + p + " " + PALETTES[color][50+a] + ";" 
          + "box-shadow: " + p + " " + PALETTES[color][50+a] + ";";
 
-    console.log(res);
+    // console.log(res);
 
     return res;
   }

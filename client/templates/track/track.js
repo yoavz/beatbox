@@ -62,7 +62,7 @@ Template.track.helpers({
   }, 
 
   color: function(darkness) {
-    color = colors[_.indexof(instruments_808, this.instrument) % colors.length]
+    color = getInstrumentColor(this.instrument);
     return PALETTES[color][darkness];
   }
 

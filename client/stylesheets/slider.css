@@ -15,10 +15,11 @@
   top: -6px;
   width: 25px;
   height: 25px;
+  cursor: pointer;
 
-  background-color: white;
+  background-color: gray;
   box-shadow: none;
-  border: 2px solid black;
+  border: 1px solid black;
 
 
   border-radius: 10px 10px 10px 10px;
