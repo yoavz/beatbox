@@ -1,3 +1,5 @@
+@import "color-palette/color.scss";
+
 .beat-container {
   display: inline-block;
   vertical-align: middle;
@@ -29,30 +31,26 @@
   /* http://www.ibm.com/design/language/resources/swatch-book.shtml 
    * I should really use SCSS here... */
 
+    @mixin beat-up($color) {
+      background: palette($color, 40);
+      -webkit-box-shadow: 0px 6px 0px palette($color, 50);
+         -moz-box-shadow: 0px 6px 0px palette($color, 50);
+              box-shadow: 0px 6px 0px palette($color, 50);
+    }
 
-  .beat {
-    background: #777677;
-    -webkit-box-shadow: 0px 6px 0px #959595;
-       -moz-box-shadow: 0px 6px 0px #959595;
-            box-shadow: 0px 6px 0px #959595;
-  }
-
-  .beat:active, .beat.active {
-    background: #5A5A5A;
-    -webkit-box-shadow: 0px 1px 0px #;
-       -moz-box-shadow: 0px 1px 0px #777677;
-            box-shadow: 0px 1px 0px #777677;
-  }
+    @mixin beat-active($color) {
+      background: palette($color, 60);
+      -webkit-box-shadow: 0px 1px 0px palette($color, 70);
+         -moz-box-shadow: 0px 1px 0px palette($color, 70);
+              box-shadow: 0px 1px 0px palette($color, 70);
+    }
 
   .beat-container:nth-of-type(16n+1) .beat ,
   .beat-container:nth-of-type(16n+2) .beat ,
   .beat-container:nth-of-type(16n+3) .beat ,
   .beat-container:nth-of-type(16n+4) .beat
   {
-    background: #4178BE;
-    -webkit-box-shadow: 0px 6px 0px #325C80;
-       -moz-box-shadow: 0px 6px 0px #325C80;
-            box-shadow: 0px 6px 0px #325C80;
+    @include beat-up("blue");
   }
 
   .beat-container:nth-of-type(16n+1) .beat:active, 
@@ -64,10 +62,7 @@
   .beat-container:nth-of-type(16n+4) .beat:active, 
   .beat-container:nth-of-type(16n+4) .beat.active
   {
-    background: #264A60;
-    -webkit-box-shadow: 0px 1px 0px #1D3649;
-       -moz-box-shadow: 0px 1px 0px #1D3649;
-            box-shadow: 0px 1px 0px #1D3649;
+    @include beat-active("blue");
   }
 
   .beat-container:nth-of-type(16n+5) .beat ,
@@ -75,10 +70,7 @@
   .beat-container:nth-of-type(16n+7) .beat ,
   .beat-container:nth-of-type(16n+8) .beat
   {
-    background: #4B8400;
-    -webkit-box-shadow: 0px 6px 0px #2D660A;
-       -moz-box-shadow: 0px 6px 0px #2D660A;
-            box-shadow: 0px 6px 0px #2D660A;
+    @include beat-up("green");
   }
 
   .beat-container:nth-of-type(16n+5) .beat:active, 
@@ -90,10 +82,7 @@
   .beat-container:nth-of-type(16n+8) .beat:active, 
   .beat-container:nth-of-type(16n+8) .beat.active
   {
-    background: #144D14;
-    -webkit-box-shadow: 0px 1px 0px #0A3C02;
-       -moz-box-shadow: 0px 1px 0px #0A3C02;
-            box-shadow: 0px 1px 0px #0A3C02;
+    @include beat-active("green");
   }
 
   .beat-container:nth-of-type(16n+9) .beat ,
@@ -101,10 +90,7 @@
   .beat-container:nth-of-type(16n+11) .beat ,
   .beat-container:nth-of-type(16n+12) .beat
   {
-    background: #9855D4;
-    -webkit-box-shadow: 0px 6px 0px #734098;
-       -moz-box-shadow: 0px 6px 0px #734098;
-            box-shadow: 0px 6px 0px #734098;
+    @include beat-up("purple");
   }
 
   .beat-container:nth-of-type(16n+9) .beat:active, 
@@ -116,10 +102,7 @@
   .beat-container:nth-of-type(16n+12) .beat:active, 
   .beat-container:nth-of-type(16n+12) .beat.active
   {
-    background: #562F72;
-    -webkit-box-shadow: 0px 1px 0px #412356;
-       -moz-box-shadow: 0px 1px 0px #412356;
-            box-shadow: 0px 1px 0px #412356;
+    @include beat-active("purple");
   }
 
   .beat-container:nth-of-type(16n+13) .beat ,
@@ -127,10 +110,7 @@
   .beat-container:nth-of-type(16n+15) .beat ,
   .beat-container:nth-of-type(16n+16) .beat
   {
-    background: #E71D32;
-    -webkit-box-shadow: 0px 6px 0px #AD1625;
-       -moz-box-shadow: 0px 6px 0px #AD1625;
-            box-shadow: 0px 6px 0px #AD1625;
+    @include beat-up("red");
   }
 
   .beat-container:nth-of-type(16n+13) .beat:active, 
@@ -142,10 +122,7 @@
   .beat-container:nth-of-type(16n+16) .beat:active, 
   .beat-container:nth-of-type(16n+16) .beat.active
   {
-    background: #8C101C;
-    -webkit-box-shadow: 0px 1px 0px #6E0A1E;
-       -moz-box-shadow: 0px 1px 0px #6E0A1E;
-            box-shadow: 0px 1px 0px #6E0A1E;
+    @include beat-active("red");
   }
 
   /* INDICATOR */

@@ -23,7 +23,6 @@ Template.controls.helpers({
   },
 
   roomUrl: function () {
-    console.log("hey");
     return document.URL
   }
 });
