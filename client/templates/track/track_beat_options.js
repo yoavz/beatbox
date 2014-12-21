@@ -14,7 +14,7 @@ Template.trackBeatOptions.helpers({
   },
 
   color: function (darkness) {
-    instrument = Template.parentData().instrument;
+    instrument = Template.parentData(0).instrument;
     color = getInstrumentColor(instrument);
     return "color: " + PALETTES[color][darkness] + ";"
   }
