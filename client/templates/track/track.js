@@ -79,7 +79,7 @@ Template.track.events({
     updateFields = {}
     updateFields[pos] = !active;
 
-    track = Template.parentData();
+    track = Template.parentData(0);
     Tracks.update(track._id, {$set: updateFields}, false);
   },
 
