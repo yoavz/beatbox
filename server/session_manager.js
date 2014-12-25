@@ -5,27 +5,27 @@
 // link to meteor-user-status collection
 UserConnections = new Meteor.Collection("user_status_sessions", {connection: null});
 
-// the following would be needed if collection is made persistent
-// Meteor.startup(function () {
-//   UserSessions.remove({});
-// });
+// on startup, clear all the sessions
+Meteor.startup(function () {
+  UserSessions.remove({});
+});
+
+function log(s) {
+  console.log("(Session Manager): " + s);
+}
 
 function enterRoom (sessionId, roomId) {
 
   // insert or modify the session
-  UserSessions.insert({
-    _id: sessionId,
-    roomId: roomId
+  UserSessions.upsert(sessionId, {
+    $set: { roomId: roomId }
   });
-  // UserSessions.upsert(sessionId, {
-  //   $set: { roomId: roomId }
-  // });
 
   Rooms.update(roomId, {
     $inc: { sessions: 1 }
   });
 
-  console.log("room enter: " + sessionId + " " + roomId);
+  log("room enter: " + sessionId + " " + roomId);
 }
 
 function leaveRoom (sessionId, roomId) {
@@ -35,17 +35,16 @@ function leaveRoom (sessionId, roomId) {
     _id: sessionId,
     roomId: roomId,
   })
-
   
   Rooms.update(roomId, {
     $inc: { sessions: -1 }
   });
 
-  console.log("room left");
+  log("room left");
 }
 
 Meteor.publish('Room', function (roomId) {
-  // TODO: figure out what this exactly means
+  // this is the same session id that is used in UserConnections
   sessionId = this._session.id;
 
   // enter the room

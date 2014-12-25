@@ -8,10 +8,6 @@ Template.room.helpers({
     return Tracks.find();
   },
 
-  sessions: function () {
-    return UserSessions.find().count();
-  },
-
 });
 
 Template.room.events({
