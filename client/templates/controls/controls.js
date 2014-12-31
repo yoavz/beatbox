@@ -10,27 +10,43 @@ Template.controls.created = function () {
     }
   });
 };
+
 Template.controls.helpers({
+  
   isPlaying: function () {
     return Metronome.isActive();
   },
+
   tempo: function () {
     return Metronome.currentTempo();
   },
+
   roomUrl: function () {
     return document.URL;
   },
+
   increaseDisabled: function () {
     return Metronome.currentTempo() >= 250 ? 'disabled' : '';
   },
+
   decreaseDisabled: function () {
     return Metronome.currentTempo() < 50 ? 'disabled' : '';
+  },
+
+  sessions: function () {
+    count = UserSessions.find().count(); 
+    console.log(count);
+    return count;
   }
+
 });
+
 Template.controls.events({
+
   'click .reset-beats': function () {
     Meteor.call('resetAll');
   },
+
   'click .stop-start': function () {
     if (Metronome.isActive()) {
       Metronome.stop();
@@ -38,13 +54,16 @@ Template.controls.events({
       Metronome.play();
     }
   },
+  
   'click .tempo-increase': function () {
     Metronome.changeTempo(Metronome.currentTempo() + 10);
   },
+
   'click .tempo-decrease': function () {
     Metronome.changeTempo(Metronome.currentTempo() - 10);
   }
 });
+
 function pulse() {
   $('.tempo').addClass('click');
   setTimeout(function () {

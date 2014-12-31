@@ -21,9 +21,9 @@ function enterRoom (sessionId, roomId) {
     $set: { roomId: roomId }
   });
 
-  Rooms.update(roomId, {
-    $inc: { sessions: 1 }
-  });
+  // Rooms.update(roomId, {
+  //   $inc: { sessions: 1 }
+  // });
 
   log("room enter: " + sessionId + " " + roomId);
 }
@@ -36,16 +36,16 @@ function leaveRoom (sessionId, roomId) {
     roomId: roomId,
   })
   
-  Rooms.update(roomId, {
-    $inc: { sessions: -1 }
-  });
+  // Rooms.update(roomId, {
+  //   $inc: { sessions: -1 }
+  // });
 
-  log("room left");
+  log("room left: " + sessionId + " " + roomId);
 }
 
 Meteor.publish('Room', function (roomId) {
   // this is the same session id that is used in UserConnections
-  sessionId = this._session.id;
+  var sessionId = this.connection.id;
 
   // enter the room
   enterRoom(sessionId, roomId);
@@ -54,8 +54,6 @@ Meteor.publish('Room', function (roomId) {
   this.onStop(function () {
     leaveRoom(sessionId, roomId);
   });
-
-  console.log(UserSessions.find({roomId: roomId}).count());
 
   return [
     Rooms.find(roomId),
