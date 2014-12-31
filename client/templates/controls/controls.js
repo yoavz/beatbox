@@ -34,7 +34,7 @@ Template.controls.helpers({
   },
 
   sessions: function () {
-    count = UserSessions.find().count(); 
+    count = UserConnections.find().count(); 
     console.log(count);
     return count;
   }
