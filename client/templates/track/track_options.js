@@ -15,11 +15,13 @@ Template.trackOptions.helpers({
   }
 });
 Template.trackOptions.events({
+
   'set .volume-slider': function (e) {
     volume = $(e.target).val();
     volume = Math.floor(volume);
-    Tracks.update(this._id, { $set: { volume: volume } }, false);
+    Meteor.call('updateTrack', this._id, { volume: volume });
   },
+
   'click .instrument': function (e) {
     instruments = allInstruments();
     index = _.indexOf(instruments, this.instrument);
@@ -28,16 +30,21 @@ Template.trackOptions.events({
     else
       index += 1;
     newInstrument = instruments[index];
-    Tracks.update(this._id, { $set: { instrument: newInstrument } }, false);
+
+    Meteor.call('updateTrack', this._id, { instrument: newInstrument });
     FastPlayer.playInstrument(newInstrument, this.volume);
   },
+
   'click .reset-button': function () {
     Meteor.call('resetTrack', this._id);
   },
+
   'click .remove-button': function () {
     Meteor.call('removeTrack', this._id);
   },
+
   'click .mute-button': function () {
-    Tracks.update(this._id, { $set: { muted: !this.muted } }, false);
+    Meteor.call('updateTrack', this._id, { muted: !this.muted });
   }
+
 });

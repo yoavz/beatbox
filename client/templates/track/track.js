@@ -10,6 +10,7 @@ Template.track.created = function () {
     }
   });
 };
+
 Template.track.rendered = function () {
   // this is bound to the templateInstance inside the rendered function
   // context lives in this.data
@@ -23,6 +24,7 @@ Template.track.rendered = function () {
     }
   });
 };
+
 Template.track.helpers({
   beats: function () {
     // get the total amount of beats
@@ -52,6 +54,7 @@ Template.track.helpers({
     return PALETTES[color][darkness];
   }
 });
+
 Template.track.events({
   'click .beat': function (e) {
     target = $(e.target);
@@ -60,6 +63,8 @@ Template.track.events({
     updateFields = {};
     updateFields[pos] = !active;
     track = Template.parentData(0);
-    Tracks.update(track._id, { $set: updateFields }, false);
+
+    Meteor.call('updateTrack', track._id, updateFields);
   }
 });
+

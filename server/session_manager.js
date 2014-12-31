@@ -2,16 +2,8 @@
 // relies on mizzao's meteor-user-status package
 // https://github.com/mizzao/CrowdMapper/blob/master/server/chat_server.coffee
 
-// link to meteor-user-status collection
-// UserConnections = new Meteor.Collection("user_status_sessions", {connection: null});
-
-// on startup, clear all the sessions
-// Meteor.startup(function () {
-//   UserSessions.remove({});
-// });
-
 function log(s) {
-  console.log("(Session Manager): " + s);
+  // console.log("(Session Manager): " + s);
 }
 
 function enterRoom (sessionId, roomId) {
@@ -30,12 +22,6 @@ function enterRoom (sessionId, roomId) {
 
 function leaveRoom (sessionId, roomId) {
 
-  // remove the user session unless it has changed rooms
-  // UserSessions.remove({
-  //   _id: sessionId,
-  //   roomId: roomId,
-  // })
-  
   // Rooms.update(roomId, {
   //   $inc: { sessions: -1 }
   // });

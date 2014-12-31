@@ -35,7 +35,6 @@ Template.controls.helpers({
 
   sessions: function () {
     count = UserConnections.find().count(); 
-    console.log(count);
     return count;
   }
 
