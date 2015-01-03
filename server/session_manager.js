@@ -13,19 +13,10 @@ function enterRoom (sessionId, roomId) {
     $set: { roomId: roomId }
   });
 
-  // Rooms.update(roomId, {
-  //   $inc: { sessions: 1 }
-  // });
-
   log("room enter: " + sessionId + " " + roomId);
 }
 
 function leaveRoom (sessionId, roomId) {
-
-  // Rooms.update(roomId, {
-  //   $inc: { sessions: -1 }
-  // });
-
   log("room left: " + sessionId + " " + roomId);
 }
 

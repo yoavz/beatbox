@@ -1,3 +1,5 @@
 .DS_Store
 .meteor/local
 *.swp
+
+server/config.js

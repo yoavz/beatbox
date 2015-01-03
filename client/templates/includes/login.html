@@ -1,0 +1,9 @@
+<template name="login">
+<div class="login">
+  {{ #if currentUser }}
+    <span>Logged in as {{ currentUser.profile.name }}</span>
+  {{ else }}
+    <a>Login on twitter</a>
+  {{ /if }}
+</div>
+</template>

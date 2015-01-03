@@ -46,11 +46,23 @@ a:hover {
     padding: 10px;
   }
 
-  .header .credits {
+  .header .login {
+    display: inline;
     width: 50%;
+    float: left;
+    text-align: right;
+    padding: 10px;
+    color: white;
+  }
+
+.footer {
+  overflow: auto;
+}
+
+  .footer .credits {
     float: right;
     color: white;
-    text-align: right;
+    text-align: center;
     padding: 10px;
   }
 
