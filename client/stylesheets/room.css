@@ -25,8 +25,18 @@
 
   .stop-start:hover {
     cursor: pointer;
-    background: lightgrey;
+    background: #1EBE39;
   }
+
+/*  .start:hover {
+    cursor: pointer;
+    background: #1EBE39;
+  }
+
+  .stop:hover {
+    cursor: pointer;
+    background: #B90504;
+  }*/
 
   .tempo {
     width: 20%;

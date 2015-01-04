@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "chatworks": {}
+    },
+    "packages": {
+      "chatworks": {
+        "git": "https://github.com/Pent/chatworks.git",
+        "tag": "v1.7.0",
+        "commit": "a081d78cd9834bab9a7a1d6868dc7b88effc08cc"
+      }
+    }
+  }
+}

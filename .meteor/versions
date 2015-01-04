@@ -6,6 +6,7 @@ blaze@2.0.4
 blaze-tools@1.0.2
 boilerplate-generator@1.0.2
 callback-hook@1.0.2
+chatworks@0.0.0
 check@1.0.3
 ddp@1.0.13
 deps@1.0.6
@@ -29,6 +30,7 @@ iron:url@1.0.6
 jquery@1.0.2
 json@1.0.2
 launch-screen@1.0.1
+less@1.0.12
 linto:fontawesome@4.2.2
 livedata@1.0.12
 logging@1.0.6
@@ -50,6 +52,7 @@ routepolicy@1.0.3
 session@1.0.5
 spacebars@1.0.4
 spacebars-compiler@1.0.4
+standard-app-packages@1.0.4
 templating@1.0.10
 tracker@1.0.4
 ui@1.0.5
