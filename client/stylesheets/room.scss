@@ -175,6 +175,8 @@
 
 .users-container {
   display: relative;
+  height: 104px;
+  overflow-y: scroll;
 }
 
 .user {
