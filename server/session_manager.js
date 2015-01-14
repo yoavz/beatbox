@@ -24,7 +24,7 @@ function enterRoom (sessionId, roomId) {
   log("room enter: " + sessionId + " " + roomId);
 }
 
-function leaveRoom (sessionId, roomId) {
+function leaveRoom (sessionId) {
 
   UserStatus.connections.upsert(sessionId, {
     $unset: { roomId: "" }
@@ -37,26 +37,24 @@ function leaveRoom (sessionId, roomId) {
     });
   }
 
-  log("room left: " + sessionId + " " + roomId);
+  log("room left: " + sessionId);
 }
 
 UserStatus.events.on("connectionLogin", function(fields) {
 
-  var session = UserStatus.connections.findOne(fields.connectionId);
-  Meteor.users.upsert(session._id, {
-    $set: { roomId: session.roomId }
-  });
-
   log("logged in " + fields.userId);
+
+  // if there is a roomId in the connection, enter room
+  if (fields.roomId) {
+    enterRoom(fields.connectionId, fields.roomId);
+  }
+
 });
 
 UserStatus.events.on("connectionLogout", function(fields) {
 
-  Meteor.users.upsert(userId, {
-    $unset: { roomId: "" }
-  });
-
   log("logged out " + fields.userId);
+
 });
 
 Meteor.publish('Room', function (roomId) {
@@ -68,7 +66,7 @@ Meteor.publish('Room', function (roomId) {
 
   // on subscription end, leave the room
   this.onStop(function () {
-    leaveRoom(sessionId, roomId);
+    leaveRoom(sessionId);
   });
 
   return [
