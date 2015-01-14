@@ -10,6 +10,9 @@
 
 <template name="user">
   <div class="user">
+    {{#if loggingIn}}
+    <span>loading...</span>
+    {{ else }}
     <div class="user-icon">
       {{{userIcon}}}
     </div>
@@ -20,5 +23,6 @@
         {{userName}}
       {{/if}}
     </div>
+    {{/if}}
   </div>
 </template>

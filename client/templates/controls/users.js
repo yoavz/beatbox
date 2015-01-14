@@ -6,6 +6,10 @@ Template.users.helpers({
 
 Template.user.helpers({
 
+  loggingIn: function () {
+    return Meteor.loggingIn();
+  },
+
   userIcon: function () {
     if (this.userId) { 
       var user = Meteor.users.findOne(this.userId);
