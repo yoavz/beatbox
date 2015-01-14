@@ -1,14 +1,23 @@
 Template.login.helpers({
-   
 });
 
 Template.login.events({
-  "click a": function (e) {
-    // console.log(Accounts);
+  "click #login": function (e) {
     Meteor.loginWithTwitter({
-        
+      //twitter options here?
     }, function (error) {
-      console.log(error);
+      if (error)
+        console.log(error);
+    });
+  },
+
+  "click #logout": function (e) {
+    Meteor.logout(function (error) {
+      if (error)
+        console.log(error);
     });
   }
+
+
+
 });

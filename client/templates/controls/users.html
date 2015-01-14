@@ -1,0 +1,24 @@
+<template name="users">
+  <div class="inner-control" id="users">
+   <div class="users-container">
+    {{#each users}}
+      {{> user}}
+    {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="user">
+  <div class="user">
+    <div class="user-icon">
+      {{{userIcon}}}
+    </div>
+    <div class="user-name">
+      {{#if userTwitterName }}
+        <a href="https://twitter.com/{{userTwitterName}}">@{{userTwitterName}}</a>
+      {{ else }}
+        {{userName}}
+      {{/if}}
+    </div>
+  </div>
+</template>

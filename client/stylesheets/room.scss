@@ -1,0 +1,204 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.controls-container {
+  display: relative;
+  overflow: auto;
+}
+
+.inner-control {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  display: inline-block;
+  background: darkgrey;
+  padding: 10px;
+  margin: 3px;
+  height: inherit;
+  width: 49%; // Why can't I make this 50%?
+  float: left;
+  overflow: auto;
+
+  @include border-radius(5px);
+  /* border: 2px solid #0C7489; */
+}
+
+  .stop-start  {
+    padding: 10px;
+    text-align: center;
+    width: 30%;
+    float: left;
+    
+    @include border-radius(5px);
+    border: 2px solid;
+  }
+
+  .stop-start:hover {
+    cursor: pointer;
+    background: lightgrey;
+  }
+
+  .tempo {
+    width: 50%;
+    height: 42px;
+    float: right;
+    margin-left: 10px;
+    background-color: lightgrey;
+
+    @include border-radius(5px);
+  }
+
+  .tempo.click {
+    background-color: lightyellow;
+  }
+
+    .tempo button {
+      border: none;
+      height: 100%;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      border: 2px solid black;
+    }
+
+    .tempo button:hover {
+      background-color: grey;
+    }
+
+    .tempo button:active {
+      background-color: lightgrey;
+    }
+
+    .tempo .tempo-value {
+      position: relative;
+      width: 60%; 
+      float: left;
+      text-align: center;
+    }
+
+    .tempo .tempo-value .tempo-number {
+      font-size: 20px;
+    }
+
+    .tempo .tempo-value .tempo-label {
+      font-size: 12px;
+    }
+
+    .tempo .tempo-increase {
+      display: inline-block;
+      width: 20%;
+
+      border-radius: 0px 5px 5px 0px;
+      -moz-border-radius: 0px 5px 5px 0px;
+      -webkit-border-radius: 0px 5px 5px 0px;
+    }
+
+    .tempo .tempo-decrease {
+      display: inline-block;
+      width: 20%;
+      float: left;
+
+      border-radius: 5px 0px 0px 5px;
+      -moz-border-radius: 5px 0px 0px 5px;
+      -webkit-border-radius: 5px 0px 0px 5px;
+    }
+
+  .reset-beats {
+    display: inline;
+    background:#0C7489;
+    float: right;
+
+    border: 2px solid #0C7489;
+  }
+
+  .reset-beats:hover {
+    background: #119DA4;
+  }
+
+.room-url {
+  float: left;
+  margin: 10px 0px 0px 0px;
+}
+
+  .room-url textarea {
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+
+    resize: none;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .room-url .url-label {
+    font-size: 10px;
+    font-style: italic;
+    margin: 0;
+  }
+  
+  .room-url .url-label a {
+    color: black;
+  }
+
+  .room-url .url-label a:hover {
+    color: white;
+  }
+
+.room-info {
+  float: right;
+}
+  .room-info .room-title {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .room-info .room-users{
+    font-size: 12px;
+    font-style: italic;
+  }
+
+/* USERS  */
+
+#users h3 {
+  margin: 0;
+}
+
+.users-container {
+  display: relative;
+}
+
+.user {
+  margin: 5px 0px;
+}
+
+.user-icon, .user-info {
+  display: inline-block;
+  float: left;
+  
+  margin: 0px 10px; 
+}
+
+.user-icon img {
+  width: 16px;
+  height: 16px;
+
+  @include border-radius(8px);
+}
+
+.user-name a {
+  color: black;
+}
+
+.user-name a:hover {
+  color: lightgrey;
+}

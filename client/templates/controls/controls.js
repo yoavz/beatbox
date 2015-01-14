@@ -33,9 +33,12 @@ Template.controls.helpers({
     return Metronome.currentTempo() < 50 ? 'disabled' : '';
   },
 
-  sessions: function () {
-    count = UserConnections.find().count(); 
-    return count;
+  colorStyle: function () {
+    color = getHexColor(Session.get('homeColor'), 20);
+    if (color)
+      return 'background-color: ' + color + ';';
+    else 
+      return 'background-color: lightgrey;';
   }
 
 });

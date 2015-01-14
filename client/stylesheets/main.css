@@ -45,6 +45,10 @@ a:hover {
     float: left;
     padding: 10px;
   }
+  
+  .header .title a:hover {
+    color: lightgray;
+  }
 
   .header .login {
     display: inline;
@@ -53,6 +57,10 @@ a:hover {
     text-align: right;
     padding: 10px;
     color: white;
+  }
+
+  .header .login a {
+    cursor: pointer;
   }
 
 .footer {
@@ -90,5 +98,3 @@ button.create-room {
 button.create-room:hover {
   opacity: 0.8;
 }
-
-
