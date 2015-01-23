@@ -12,6 +12,10 @@ Template.room.helpers({
 
 Template.room.events({
   'click .add-track': function () {
+    // display error
+    if (this.locked && !ownsRoom(this, Meteor.user()))
+      return;
+      
     Meteor.call('newTrack', this._id);
   }
 });

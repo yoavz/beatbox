@@ -21,10 +21,25 @@
         <i class="fa fa-plus"></i>
       </button>
     </div>
+    {{#if ../private }}
+    <div class="lock-room">
+      {{#if ../locked }}
+        <i class="fa fa-lock fa-lg"></i>
+      {{else}}
+        <i class="fa fa-unlock fa-lg"></i>
+      {{/if}}
+    </div>
+    {{/if}}
 
     <div class="room-url">
       <textarea rows="1" onclick="this.focus();this.select()" readonly="readonly">{{roomUrl}}</textarea>
-      <p class="url-label">Invite your friends to this room using the link above. No friends?<a href="{{roomUrl}}" target="_blank">Open this page in a new tab</a>!</p>
+      <p class="url-label">
+      {{#if controlsMessage}}
+        {{controlsMessage}}
+      {{else}}
+        <br> 
+      {{/if}}
+      </p>
     </div>
   </div>
 

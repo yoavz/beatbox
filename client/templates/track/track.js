@@ -49,6 +49,7 @@ Template.track.helpers({
     }
     return res;
   },
+
   color: function (darkness) {
     color = getInstrumentColor(this.instrument);
     return PALETTES[color][darkness];
@@ -57,12 +58,18 @@ Template.track.helpers({
 
 Template.track.events({
   'click .beat': function (e) {
+    // display something
+    room = Template.parentData(1);
+    if (room.locked && !ownsRoom(room, Meteor.user()))
+      return;
+
     target = $(e.target);
     pos = target.attr('pos');
     active = target.hasClass('active');
     updateFields = {};
     updateFields[pos] = !active;
     track = Template.parentData(0);
+
 
     Meteor.call('updateTrack', track._id, updateFields);
   }

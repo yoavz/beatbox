@@ -1,6 +1,19 @@
 <template name="home">
   <div class="home-container">
     <p>A <span style="{{colorStyle}}">collaborative</span> and <span style="{{colorStyle}}">fully reactive</span> drum machine inspired by <a href="http://emberbeats.gavinjoyce.com">Emberbeats</a>.</p>
-    <button class="create-room" style="{{buttonStyle}}">Ready to Jam?</button>
+
+    <button id="public-room" class="create-room" style="{{buttonStyle}}">
+      <div class="button-title">Public Room</div>
+      <div class="button-info">Anyone will be able to modify this room!</div>
+    </button>
+    <button id="private-room" class="create-room" style="{{buttonStyle}}">
+      <div class="button-title">Private Room</div>
+      <div class="button-info">You will have full control!</div>
+    </button>
+
+    <div class="flash-message">
+      <span>{{flashedMessage}}</span>
+    </div>
   </div>
+
 </template>

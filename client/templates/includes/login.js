@@ -8,6 +8,8 @@ Template.login.events({
     }, function (error) {
       if (error)
         console.log(error);
+
+      Session.set("twitterDataReady", true);
     });
   },
 
@@ -15,9 +17,10 @@ Template.login.events({
     Meteor.logout(function (error) {
       if (error)
         console.log(error);
+
+      Session.set("twitterDataReady", false);
     });
   }
-
 
 
 });

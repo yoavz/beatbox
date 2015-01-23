@@ -1,9 +1,12 @@
 <template name="users">
   <div class="inner-control" id="users">
-   <div class="users-container">
-    {{#each users}}
-      {{> user}}
-    {{/each}}
+    <div id="total-users">
+      <span>{{totalUsers}}</span>
+    </div>
+    <div class="users-container">
+      {{#each users}}
+        {{> user}}
+      {{/each}}
     </div>
   </div>
 </template>
@@ -12,13 +15,16 @@
   <div class="user">
     {{#if loggingIn}}
     <span>loading...</span>
-    {{ else }}
+    {{else}}
     <div class="user-icon">
       {{{userIcon}}}
     </div>
     <div class="user-name">
       {{#if userTwitterName }}
         <a href="https://twitter.com/{{userTwitterName}}">@{{userTwitterName}}</a>
+        {{#if userIsOwner }}
+          <i class="fa fa-star" style="color: yellow; margin-left: 5px;"></i>
+        {{/if}}
       {{ else }}
         {{userName}}
       {{/if}}

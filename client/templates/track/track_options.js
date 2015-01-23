@@ -16,13 +16,20 @@ Template.trackOptions.helpers({
 });
 Template.trackOptions.events({
 
-  'set .volume-slider': function (e) {
+  'click .volume-slider': function (e) {
+    //display something
+    if (roomLocked())
+      return; 
+
     volume = $(e.target).val();
     volume = Math.floor(volume);
     Meteor.call('updateTrack', this._id, { volume: volume });
   },
 
   'click .instrument': function (e) {
+    if (roomLocked())
+      return; 
+
     instruments = allInstruments();
     index = _.indexOf(instruments, this.instrument);
     if (index >= instruments.length - 1)
@@ -36,15 +43,26 @@ Template.trackOptions.events({
   },
 
   'click .reset-button': function () {
-    Meteor.call('resetTrack', this._id);
+    if (!roomLocked())
+      Meteor.call('resetTrack', this._id);
   },
 
   'click .remove-button': function () {
-    Meteor.call('removeTrack', this._id);
+    if (!roomLocked())
+      Meteor.call('removeTrack', this._id);
   },
 
   'click .mute-button': function () {
-    Meteor.call('updateTrack', this._id, { muted: !this.muted });
+    if (!roomLocked())
+      Meteor.call('updateTrack', this._id, { muted: !this.muted });
   }
 
 });
+
+function roomLocked() {
+    room = Template.parentData(1);
+    if (room.locked && !ownsRoom(room, Meteor.user()))
+      return true;
+
+    return false;
+}

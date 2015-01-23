@@ -1,3 +1,5 @@
+@import 'mixins';
+
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -64,7 +66,9 @@ a:hover {
   }
 
 .footer {
-  overflow: auto;
+  position: fixed;
+  right: 100px;
+  bottom: 10px;
 }
 
   .footer .credits {
@@ -87,14 +91,30 @@ a:hover {
 
 button.create-room {
   font-family: 'Lato', 'sans-serif';
-  font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
   
-  width: 200px;
-  height: 50px;
+  margin: 10px;
 }
 
 button.create-room:hover {
   opacity: 0.8;
+}
+
+button.create-room .button-title {
+  font-size: 20px;
+}
+
+button.create-room .button-info {
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* FLASH */
+
+
+.flash-message {
+}
+
+.flash-message span {
 }

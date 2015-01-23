@@ -3,7 +3,7 @@
 // https://github.com/mizzao/CrowdMapper/blob/master/server/chat_server.coffee
 
 function log(s) {
-  console.log("(Session Manager): " + s);
+  // console.log("(Session Manager): " + s);
 }
 
 function enterRoom (sessionId, roomId) {
@@ -70,7 +70,6 @@ Meteor.publish('Room', function (roomId) {
   });
 
   return [
-    // room and track information
     Rooms.find(roomId),
     Tracks.find({roomId: roomId}),
 

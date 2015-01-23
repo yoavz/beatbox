@@ -1,14 +1,23 @@
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
+@import 'mixins';
 
 .controls-container {
   display: relative;
+  position: relative;
   overflow: auto;
 }
+
+// #controls-message {
+//   position: absolute;
+//   top: -10px;
+// }
+//
+// #controls-message span {
+//   color: white;
+//   font-size: 16px;
+//   background-color: red;
+//   
+//   z-index: 10;
+// }
 
 .inner-control {
   box-sizing: border-box;
@@ -24,13 +33,12 @@
   overflow: auto;
 
   @include border-radius(5px);
-  /* border: 2px solid #0C7489; */
 }
 
   .stop-start  {
     padding: 10px;
     text-align: center;
-    width: 30%;
+    width: 20%;
     float: left;
     
     @include border-radius(5px);
@@ -45,7 +53,7 @@
   .tempo {
     width: 50%;
     height: 42px;
-    float: right;
+    float: left;
     margin-left: 10px;
     background-color: lightgrey;
 
@@ -107,6 +115,22 @@
       -webkit-border-radius: 5px 0px 0px 5px;
     }
 
+  .lock-room {
+    padding: 10px;
+    margin: 0px 10px;
+    text-align: center;
+    width: 20%;
+    float: left;
+    
+    @include border-radius(5px);
+    border: 2px solid;
+  }
+
+  .lock-room:hover {
+    cursor: pointer;
+    background: lightgrey;
+  }
+
   .reset-beats {
     display: inline;
     background:#0C7489;
@@ -121,6 +145,7 @@
 
 .room-url {
   float: left;
+  width: 100%;
   margin: 10px 0px 0px 0px;
 }
 
@@ -135,12 +160,13 @@
     resize: none;
     background-color: black;
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     width: 100%;
+    overflow: hidden;
   }
 
   .room-url .url-label {
-    font-size: 10px;
+    font-size: 12px;
     font-style: italic;
     margin: 0;
   }
@@ -169,13 +195,16 @@
 
 /* USERS  */
 
+#users {
+  position: relative;
+}
+
 #users h3 {
   margin: 0;
 }
 
 .users-container {
-  display: relative;
-  height: 104px;
+  height: 92px;
   overflow-y: scroll;
 }
 
@@ -203,4 +232,16 @@
 
 .user-name a:hover {
   color: lightgrey;
+}
+
+#total-users {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  // left: 20px;
+}
+
+#total-users span {
+  font-size: 12px;
+  font-style: italic;
 }
