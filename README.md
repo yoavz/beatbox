@@ -18,9 +18,11 @@ Make sure you have Meteor installed
 #### Todo
 
 1. ~~Track user sessions, be able to display "n users collaborating"~~
-2. Chat
-3. More and better instruments
-4. Proper redesign
+2. ~~Public and private rooms, read-only support~~
+3. Better message flashing/feedback
+4. More and better instruments
+5. Proper redesign
+6. Chat
 
 #### Technologies
 
