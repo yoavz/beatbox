@@ -21,8 +21,10 @@ Template.trackOptions.events({
     if (roomLocked())
       return; 
 
-    volume = $(e.target).val();
+    volume = $(".volume-slider").val();
     volume = Math.floor(volume);
+
+    console.log(volume);
     Meteor.call('updateTrack', this._id, { volume: volume });
   },
 
