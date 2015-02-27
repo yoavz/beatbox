@@ -5,6 +5,7 @@ Template.trackOptions.rendered = function () {
     self.$('.volume-slider').val(self.data.volume);
   });
 };
+
 Template.trackOptions.helpers({
   instruments: function () {
     return INSTRUMENTS_808;
@@ -14,6 +15,7 @@ Template.trackOptions.helpers({
     return PALETTES[color][darkness];
   }
 });
+
 Template.trackOptions.events({
 
   'click .volume-slider': function (e) {
@@ -21,10 +23,9 @@ Template.trackOptions.events({
     if (roomLocked())
       return; 
 
-    volume = $(".volume-slider").val();
+    volume = $(e.currentTarget).val();
     volume = Math.floor(volume);
 
-    console.log(volume);
     Meteor.call('updateTrack', this._id, { volume: volume });
   },
 
